@@ -28,7 +28,7 @@ public class ApplicationRest {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public void create(@RequestParam String value) throws LoginException, RepositoryException {
-		repositoryService.addNode(value);
+		repositoryService.addNode("wxcxqsdwcxw" + value);
 	}
 
 //    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)

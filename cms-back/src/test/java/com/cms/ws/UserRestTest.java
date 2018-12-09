@@ -19,6 +19,7 @@ import com.cms.config.AppConfig;
 @ContextConfiguration(classes = {AppConfig.class})
 @WebAppConfiguration
 public class UserRestTest {
+/*
     @Autowired
     private WebApplicationContext context;
     private MockMvc mvc;
@@ -27,6 +28,7 @@ public class UserRestTest {
     public void before() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
+*/
 
 //    @Test
 //    public void getUsersTest() throws Exception {
