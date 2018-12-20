@@ -7,21 +7,21 @@ import javax.jcr.Session;
 import java.net.UnknownHostException;
 
 public class CNDMain {
-    public static void main(String[] args) throws UnknownHostException, LoginException, RepositoryException {
+	public static void main(String[] args) throws UnknownHostException, LoginException, RepositoryException {
 
-        Session session = BdStructure.getSession();
-        Node parentNode = session.getRootNode();
-//		Node childNode = parentNode.addNode("test-version");
-//		childNode.setProperty("ville", "Argenteuil");
-//		childNode.addMixin(JcrConstants.MIX_VERSIONABLE);
+		Session session = BdStructure.getSession();
+		Node parentNode = session.getRootNode();
+		// Node childNode = parentNode.addNode("test-version");
+		// childNode.setProperty("ville", "Argenteuil");
+		// childNode.addMixin(JcrConstants.MIX_VERSIONABLE);
 
-        Node node = parentNode.addNode("test-version", "cnt:article");
-//		node.checkin();
-//		node.checkout();
-        node.setProperty("ville", "Casablanca");
+		Node node = parentNode.addNode("test-version", "cnt:article");
+		// node.checkin();
+		// node.checkout();
+		node.setProperty("ville", "Casablanca");
 
-        session.save();
-        session.logout();
-        System.out.println("FIN");
-    }
+		session.save();
+		session.logout();
+		System.out.println("FIN");
+	}
 }

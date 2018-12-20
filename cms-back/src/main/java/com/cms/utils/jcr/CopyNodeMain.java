@@ -9,7 +9,6 @@ import javax.jcr.Session;
 
 public class CopyNodeMain {
 	public static void main(String[] args) throws UnknownHostException, LoginException, RepositoryException {
-
 		Session session = BdStructure.getSession();
 		Node childNode = session.getNode(BdStructure.DEV_PATH_NODE);
 		session.getWorkspace().copy(childNode.getPath(), BdStructure.PROD_PATH_NODE);

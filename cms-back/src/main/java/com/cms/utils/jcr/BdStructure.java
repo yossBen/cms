@@ -25,12 +25,12 @@ public class BdStructure {
 	public static final String PROD_PATH_NODE = "/sites/portail/prod";
 
 	public static void main(String[] args) throws UnknownHostException, LoginException, RepositoryException {
-//		create();
+		// create();
 		delete(DEV_PATH_NODE);
 	}
 
-	private static void delete(String path) throws AccessDeniedException, VersionException, LockException,
-			ConstraintViolationException, PathNotFoundException, RepositoryException, UnknownHostException {
+	private static void delete(String path)
+			throws AccessDeniedException, VersionException, LockException, ConstraintViolationException, PathNotFoundException, RepositoryException, UnknownHostException {
 		Session session = BdStructure.getSession();
 		session.getNode(path).remove();
 		session.save();
@@ -50,13 +50,11 @@ public class BdStructure {
 		System.out.println("FIN");
 	}
 
-	public static Session getSession()
-			throws UnknownHostException, LoginException, NoSuchWorkspaceException, RepositoryException {
+	public static Session getSession() throws UnknownHostException, LoginException, NoSuchWorkspaceException, RepositoryException {
 		return getSession(Oak.DEFAULT_WORKSPACE_NAME);
 	}
 
-	public static Session getSession(String workspace)
-			throws UnknownHostException, LoginException, NoSuchWorkspaceException, RepositoryException {
+	public static Session getSession(String workspace) throws UnknownHostException, LoginException, NoSuchWorkspaceException, RepositoryException {
 		String uri = "mongodb://localhost:27017";
 		System.out.println("START CONNEXION");
 		DocumentNodeStore ns = new MongoDocumentNodeStoreBuilder().setMongoDB(uri, "cms", 16).build();
