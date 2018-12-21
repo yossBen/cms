@@ -7,20 +7,21 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import org.apache.jackrabbit.JcrConstants;
+
 public class TestOak {
 	public static void main(String[] args) throws UnknownHostException, LoginException, RepositoryException {
 
 		Session session = BdStructure.getSession();
-		// Node parentNode = session.getRootNode();
-		// Node childNode = parentNode.addNode("test-version");
-		// childNode.setProperty("ville", "Argenteuil");
-		// childNode.addMixin(JcrConstants.MIX_VERSIONABLE);
+//		Node parentNode = session.getRootNode();
+//		Node childNode = parentNode.addNode("test-type", "pnt:article");
+//		childNode.setProperty("ville", "Argenteuil");
+//		childNode.addMixin(JcrConstants.MIX_VERSIONABLE);
 
-		Node node = session.getNode("/test-version");
+		Node node = session.getNode("/test-type");
+		node.setProperty("pays", "France");
 		// node.checkin();
 		// node.checkout();
-
-		node.setProperty("ville", "Casablanca");
 
 		// System.out.println(childNode.getProperty("country").getString());
 
